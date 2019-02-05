@@ -8,3 +8,13 @@ export const getPositionOptions = () => {
 };
 
 export const getPositionTitle = (id) => lang.POSITIONS[id];
+
+export const getServerData = (data) => {
+    const formData = new FormData();
+
+    for(const key in data){
+        formData.append(key, data[key]);
+    }
+
+    return formData;
+};

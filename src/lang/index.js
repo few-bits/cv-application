@@ -13,5 +13,5 @@ export default {
     PLACEHOLDER_COMMENTS: 'Comments',
     PLACEHOLDER_LINK: 'Link to your CV, ex. http://',
     UPLOAD_CV: 'Upload CV file',
-    SEND: 'Send ',
+    SEND: 'Send',
 };

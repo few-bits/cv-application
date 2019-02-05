@@ -6,10 +6,11 @@ import styles from './styles.module.scss';
 import lang from '../../lang';
 import * as utils from '../../utils';
 
-import { changeField } from '../../redux/formData/actions';
-import { setPositionFieldState } from '../../redux/formView/actions';
+import { changeField, sendForm } from '../../redux/formData/actions';
+
 import Input from '../../Components/Input';
 import Select from '../../Components/Select';
+import Button from '../../Components/Button';
 
 import {
     FIELD_COMMENTS,
@@ -71,6 +72,12 @@ const CvForm = ({
                     placeHolder={lang.PLACEHOLDER_LINK}
                     customStyles={styles.links}
                 />
+                <Button
+                    onClick={actions.sendForm}
+                    text={lang.SEND}
+                    customStyles={null}
+                    disabled={formView.submitInProgress}
+                />
             </div>
         </div>
     );
@@ -84,20 +91,18 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
     actions: {
         changeField: (fieldId, value) => dispatch(changeField(fieldId, value)),
-        setPositionFieldState: (state) => dispatch(setPositionFieldState(state)),
+        sendForm: () => dispatch(sendForm()),
     }
 });
 
 CvForm.propTypes = {
-    formData: PropTypes.shape({
-        balance: PropTypes.number
-    }).isRequired,
+    formData: PropTypes.shape().isRequired,
     formView: PropTypes.shape({
-        balance: PropTypes.number
+        submitInProgress: PropTypes.bool,
     }).isRequired,
     actions: PropTypes.shape({
         changeField: PropTypes.func,
-        setPositionFieldState: PropTypes.func,
+        sendForm: PropTypes.func,
     }).isRequired,
 };
 

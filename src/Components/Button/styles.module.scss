@@ -1,0 +1,21 @@
+@import "../../assets/styles/variables";
+
+.button {
+    width: 100%;
+    height: $inputHeight;
+    background-color: $whiteColor;
+    border-radius: 4px;
+    box-shadow: 0 5px 10px 0 rgba(22, 30, 46, 0.2);
+    cursor: pointer;
+
+    &:hover:not([disabled]) {
+        box-shadow: 0 5px 10px 0 rgba(22, 30, 46, 0.4);
+    }
+
+    &[disabled] {
+        opacity: 0.8;
+        cursor: not-allowed;
+    }
+
+
+}

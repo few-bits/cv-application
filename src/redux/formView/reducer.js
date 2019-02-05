@@ -1,18 +1,24 @@
-import * as types from './types';
+import * as dataTypes from '../formData/types';
 
 const initialState = {
-    positionFieldState: false,
+    submitInProgress: false,
 };
 
 export default (state = {
     ...initialState,
 }, action) => {
     switch (action.type) {
-        case types.SET_POSITION_FIELD_STATE: {
-            const { positionFieldState } = action.payload;
+        case dataTypes.SEND_IN_PROGRESS: {
             return {
                 ...state,
-                positionFieldState,
+                submitInProgress: true,
+            };
+        }
+        case dataTypes.SEND_SUCCESS:
+        case dataTypes.SEND_FAIL: {
+            return {
+                ...state,
+                submitInProgress: false,
             };
         }
         default:

@@ -22,6 +22,9 @@ export default (state = {
                 [fieldId]: value,
             };
         }
+        case types.SEND_SUCCESS: {
+            return { ...initialState };
+        }
         default:
             return state
     }
