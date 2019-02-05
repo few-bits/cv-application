@@ -55,4 +55,8 @@
             }
         }
     }
+
+    &.error .selectedOption {
+        @include error-border();
+    }
 }

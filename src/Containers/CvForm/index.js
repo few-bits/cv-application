@@ -45,6 +45,7 @@ const CvForm = ({
                     placeHolder={lang.PLACEHOLDER_POSITION}
                     customStyles={styles.positions}
                     disabled={formView.submitInProgress}
+                    error={formView.formErrors[FIELD_POSITION_ID]}
                 />
                 <Input
                     value={formData[FIELD_NAME]}
@@ -52,6 +53,7 @@ const CvForm = ({
                     placeHolder={lang.PLACEHOLDER_NAME}
                     customStyles={styles.name}
                     disabled={formView.submitInProgress}
+                    error={formView.formErrors[FIELD_NAME]}
                 />
                 <Input
                     value={formData[FIELD_LAST_NAME]}
@@ -59,6 +61,7 @@ const CvForm = ({
                     placeHolder={lang.PLACEHOLDER_LAST_NAME}
                     customStyles={styles.name}
                     disabled={formView.submitInProgress}
+                    error={formView.formErrors[FIELD_LAST_NAME]}
                 />
                 <Input
                     value={formData[FIELD_MOBILE]}
@@ -66,6 +69,7 @@ const CvForm = ({
                     placeHolder={lang.PLACEHOLDER_MOBILE}
                     customStyles={styles.mobile}
                     disabled={formView.submitInProgress}
+                    error={formView.formErrors[FIELD_MOBILE]}
                 />
                 <Input
                     type={INPUT_TYPE_TEXTAREA}
@@ -74,6 +78,7 @@ const CvForm = ({
                     placeHolder={lang.PLACEHOLDER_COMMENTS}
                     customStyles={styles.comments}
                     disabled={formView.submitInProgress}
+                    error={formView.formErrors[INPUT_TYPE_TEXTAREA]}
                 />
                 <Input
                     value={formData[FIELD_LINK]}
@@ -81,6 +86,7 @@ const CvForm = ({
                     placeHolder={lang.PLACEHOLDER_LINK}
                     customStyles={styles.links}
                     disabled={formView.submitInProgress}
+                    error={formView.formErrors[FIELD_LINK]}
                 />
                 <File
                     file={formData[FIELD_CV_FILE]}
@@ -117,6 +123,7 @@ CvForm.propTypes = {
     formData: PropTypes.shape().isRequired,
     formView: PropTypes.shape({
         submitInProgress: PropTypes.bool,
+        formErrors: PropTypes.object,
     }).isRequired,
     actions: PropTypes.shape({
         changeField: PropTypes.func,

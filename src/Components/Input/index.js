@@ -9,10 +9,10 @@ const Input = ({
     type,
     value,
     onChange,
-    validationState,
     placeHolder,
     customStyles,
     disabled,
+    error,
 }) => {
     const component = type === constants.INPUT_TYPE_TEXT
         ? (
@@ -22,6 +22,7 @@ const Input = ({
                 onChange={(e) => onChange(e.target.value)}
                 placeholder={placeHolder}
                 disabled={disabled}
+                className={classnames({[styles.error]: error})}
             />
         )
         : (
@@ -30,12 +31,11 @@ const Input = ({
                 onChange={(e) => onChange(e.target.value)}
                 placeholder={placeHolder}
                 disabled={disabled}
+                className={classnames({[styles.error]: error})}
             />
         );
     return (
-        <div className={classnames(customStyles, styles.input, {
-            [styles.error]: !validationState
-        })}>
+        <div className={classnames(customStyles, styles.input)}>
             {component}
         </div>
     );
@@ -46,9 +46,9 @@ Input.propTypes = {
     value: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
     placeHolder: PropTypes.string,
-    validationState: PropTypes.bool,
     customStyles: PropTypes.string,
     disabled: PropTypes.bool,
+    error: PropTypes.bool,
 };
 
 Input.defaultProps = {
@@ -57,6 +57,7 @@ Input.defaultProps = {
     placeHolder: '',
     customStyles: null,
     disabled: false,
+    error: false,
 };
 
 export default Input;

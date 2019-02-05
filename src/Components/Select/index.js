@@ -50,6 +50,7 @@ class Select extends Component {
             options,
             placeHolder,
             customStyles,
+            error,
         } = this.props;
 
         const title = options.find(({id}) => id === selectedOption.id) !== undefined
@@ -58,7 +59,9 @@ class Select extends Component {
 
         return (
             <div
-                className={classnames(styles.select, customStyles)}
+                className={classnames(styles.select, customStyles, {
+                    [styles.error]: error,
+                })}
                 ref={this.wrapperRef}
             >
                 <div
@@ -109,6 +112,7 @@ Select.propTypes = {
     placeHolder: PropTypes.string,
     customStyles: PropTypes.string,
     disabled: PropTypes.bool,
+    error: PropTypes.bool,
 };
 
 Select.defaultProps = {
@@ -116,6 +120,7 @@ Select.defaultProps = {
     placeHolder: '',
     customStyles: null,
     disabled: false,
+    error: false,
 };
 
 export default Select;

@@ -1,0 +1,1 @@
+export const SET_VALIDATE_ERROR = 'formView/SET_VALIDATE_ERROR';
