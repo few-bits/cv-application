@@ -11,9 +11,10 @@ import { changeField, sendForm } from '../../redux/formData/actions';
 import Input from '../../Components/Input';
 import Select from '../../Components/Select';
 import Button from '../../Components/Button';
+import File from '../../Components/File';
 
 import {
-    FIELD_COMMENTS,
+    FIELD_COMMENTS, FIELD_CV_FILE,
     FIELD_LAST_NAME,
     FIELD_LINK, FIELD_MOBILE,
     FIELD_NAME, FIELD_POSITION_ID
@@ -71,6 +72,11 @@ const CvForm = ({
                     onChange={(value) => actions.changeField(FIELD_LINK, value)}
                     placeHolder={lang.PLACEHOLDER_LINK}
                     customStyles={styles.links}
+                />
+                <File
+                    onChange={(file) => actions.changeField(FIELD_CV_FILE, file)}
+                    text={lang.UPLOAD_CV}
+                    customStyles={styles.linkCv}
                 />
                 <Button
                     onClick={actions.sendForm}
