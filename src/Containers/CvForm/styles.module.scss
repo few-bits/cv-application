@@ -1,0 +1,24 @@
+.cvForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .content {
+        width: 420px;
+        text-align: center;
+
+        .positions,
+        .mobile {
+            margin-bottom: 36px;
+        }
+
+        .name {
+            margin-bottom: 10px;
+        }
+
+        .comments,
+        .links {
+            margin-bottom: 36px;
+        }
+    }
+}

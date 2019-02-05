@@ -1,0 +1,1 @@
+export const SET_POSITION_FIELD_STATE = 'formView/SET_POSITION_FIELD_STATE';

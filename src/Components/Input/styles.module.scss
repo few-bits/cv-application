@@ -1,0 +1,30 @@
+@import "../../assets/styles/mixins";
+@import "../../assets/styles/variables";
+
+.input {
+    .error {}
+
+    input,
+    textarea {
+        width: 100%;
+        height: $inputHeight;
+        padding: 0 $inputLeftPadding;
+        background-color: transparent;
+        @include light-border();
+        @include dark-text();
+
+        &::placeholder {
+            @include light-text();
+        }
+
+        &:focus {
+            @include dark-border();
+        }
+    }
+
+    textarea {
+        resize: none;
+        height: 84px;
+        padding: 9px $inputLeftPadding;
+    }
+}
