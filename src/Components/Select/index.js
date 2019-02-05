@@ -30,9 +30,11 @@ class Select extends Component {
     }
 
     toggleSelect() {
-        this.setState({
-            isOpen: !this.state.isOpen,
-        });
+        if (!this.props.disabled) {
+            this.setState({
+                isOpen: !this.state.isOpen,
+            });
+        }
     }
 
     handleSelect(id) {
@@ -106,12 +108,14 @@ Select.propTypes = {
     onSelect: PropTypes.func.isRequired,
     placeHolder: PropTypes.string,
     customStyles: PropTypes.string,
+    disabled: PropTypes.bool,
 };
 
 Select.defaultProps = {
     selectedOption: '',
     placeHolder: '',
     customStyles: null,
+    disabled: false,
 };
 
 export default Select;

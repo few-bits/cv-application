@@ -5,7 +5,15 @@ import classnames from 'classnames';
 import styles from './styles.module.scss';
 import * as constants from '../../constants/formView';
 
-const Input = ({ type, value, onChange, validationState, placeHolder, customStyles }) => {
+const Input = ({
+    type,
+    value,
+    onChange,
+    validationState,
+    placeHolder,
+    customStyles,
+    disabled,
+}) => {
     const component = type === constants.INPUT_TYPE_TEXT
         ? (
             <input
@@ -13,6 +21,7 @@ const Input = ({ type, value, onChange, validationState, placeHolder, customStyl
                 value={value}
                 onChange={(e) => onChange(e.target.value)}
                 placeholder={placeHolder}
+                disabled={disabled}
             />
         )
         : (
@@ -20,6 +29,7 @@ const Input = ({ type, value, onChange, validationState, placeHolder, customStyl
                 value={value}
                 onChange={(e) => onChange(e.target.value)}
                 placeholder={placeHolder}
+                disabled={disabled}
             />
         );
     return (
@@ -38,6 +48,7 @@ Input.propTypes = {
     placeHolder: PropTypes.string,
     validationState: PropTypes.bool,
     customStyles: PropTypes.string,
+    disabled: PropTypes.bool,
 };
 
 Input.defaultProps = {
@@ -45,6 +56,7 @@ Input.defaultProps = {
     validationState: true,
     placeHolder: '',
     customStyles: null,
+    disabled: false,
 };
 
 export default Input;

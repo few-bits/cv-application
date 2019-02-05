@@ -41,24 +41,28 @@ const CvForm = ({
                     options={utils.getPositionOptions()}
                     placeHolder={lang.PLACEHOLDER_POSITION}
                     customStyles={styles.positions}
+                    disabled={formView.submitInProgress}
                 />
                 <Input
                     value={formData[FIELD_NAME]}
                     onChange={(value) => actions.changeField(FIELD_NAME, value)}
                     placeHolder={lang.PLACEHOLDER_NAME}
                     customStyles={styles.name}
+                    disabled={formView.submitInProgress}
                 />
                 <Input
                     value={formData[FIELD_LAST_NAME]}
                     onChange={(value) => actions.changeField(FIELD_LAST_NAME, value)}
                     placeHolder={lang.PLACEHOLDER_LAST_NAME}
                     customStyles={styles.name}
+                    disabled={formView.submitInProgress}
                 />
                 <Input
                     value={formData[FIELD_MOBILE]}
                     onChange={(value) => actions.changeField(FIELD_MOBILE, value)}
                     placeHolder={lang.PLACEHOLDER_MOBILE}
                     customStyles={styles.mobile}
+                    disabled={formView.submitInProgress}
                 />
                 <Input
                     type={INPUT_TYPE_TEXTAREA}
@@ -66,17 +70,21 @@ const CvForm = ({
                     onChange={(value) => actions.changeField(FIELD_COMMENTS, value)}
                     placeHolder={lang.PLACEHOLDER_COMMENTS}
                     customStyles={styles.comments}
+                    disabled={formView.submitInProgress}
                 />
                 <Input
                     value={formData[FIELD_LINK]}
                     onChange={(value) => actions.changeField(FIELD_LINK, value)}
                     placeHolder={lang.PLACEHOLDER_LINK}
                     customStyles={styles.links}
+                    disabled={formView.submitInProgress}
                 />
                 <File
+                    file={formData[FIELD_CV_FILE]}
                     onChange={(file) => actions.changeField(FIELD_CV_FILE, file)}
                     text={lang.UPLOAD_CV}
                     customStyles={styles.linkCv}
+                    disabled={formView.submitInProgress}
                 />
                 <Button
                     onClick={actions.sendForm}

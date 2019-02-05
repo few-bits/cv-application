@@ -20,6 +20,10 @@
         &:focus {
             @include dark-border();
         }
+
+        &[disabled] {
+            opacity: 0.6;
+        }
     }
 
     textarea {
