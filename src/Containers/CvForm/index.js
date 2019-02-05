@@ -8,6 +8,7 @@ import * as utils from '../../utils';
 
 import { changeField, sendForm } from '../../redux/formData/actions';
 
+import Header from '../../Components/Header';
 import Input from '../../Components/Input';
 import Select from '../../Components/Select';
 import Button from '../../Components/Button';
@@ -31,8 +32,9 @@ const CvForm = ({
 }) => {
     return (
         <div className={styles.cvForm}>
+            <Header />
             <div className={styles.content}>
-                <h1>{lang.TITLE}</h1>
+                <h2 className={styles.title}>{lang.TITLE}</h2>
                 <Select
                     onSelect={(value) => actions.changeField(FIELD_POSITION_ID, value)}
                     selectedOption={{

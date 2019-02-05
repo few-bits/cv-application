@@ -1,4 +1,7 @@
 export default {
+    MENU_MAIN: 'Main',
+    MENU_CAREERS: 'Careers',
+    MENU_OFFICES: 'Offices',
     TITLE: 'Careers. Send us your CV',
     POSITIONS: [
         'Senior C++ Developer',

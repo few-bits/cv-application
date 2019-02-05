@@ -8,14 +8,14 @@
   color: $darkColor;
 }
 
-@mixin light-border() {
+@mixin light-border($borderRadius: 20px) {
   border: 1px solid lighten($lightColor, 30%);
-  border-radius: 20px;
+  border-radius: $borderRadius;
 }
 
-@mixin dark-border() {
+@mixin dark-border($borderRadius: 20px) {
   border: 1px solid $lightColor;
-  border-radius: 20px;
+  border-radius: $borderRadius;
 }
 
 @mixin select-arrow($img) {

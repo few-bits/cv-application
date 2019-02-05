@@ -1,0 +1,43 @@
+@import "../../../../assets/styles/mixins";
+
+.menu {
+  position: relative;
+  width: 27px;
+  height: 27px;
+  background: url("./assets/menu.png") center top no-repeat;
+  background-size: contain;
+  cursor: pointer;
+
+  .list {
+    display: none;
+    text-align: left;
+    position: absolute;
+    right: 0;
+    top: 16px + 10px;
+    width: 240px;
+    line-height: 24px;
+    background-color: $whiteColor;
+    @include dark-border(0);
+
+    .option {
+      cursor: pointer;
+      user-select: none;
+      padding: 6px $inputLeftPadding;
+      @include light-text();
+
+      &:hover,
+      &.selected {
+        @include dark-text();
+      }
+    }
+
+  }
+
+  &:hover {
+    background: url("./assets/menu-hover.png") center top no-repeat;
+    background-size: contain;
+    .list {
+      display: block;
+    }
+  }
+}

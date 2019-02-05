@@ -1,0 +1,31 @@
+@import "../../assets/styles/variables";
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  height: 120px;
+  position: relative;
+  margin-bottom: 110px;
+
+  .logo {
+    width: 160px;
+    height: 48px;
+    background: url("./assets/logo.png") center no-repeat;
+    background-size: cover;
+  }
+
+  .menu {
+    position: absolute;
+    right: 55px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  @media (max-width: 420px) {
+    .menu {
+      right: 20px;
+    }
+  }
+}

@@ -30,3 +30,10 @@ button {
 button::-moz-focus-inner {
   border: 0;
 }
+
+h2 {
+  font-size: 28px;
+  font-weight: normal;
+  line-height: 1.14;
+  color: $darkColor;
+}
