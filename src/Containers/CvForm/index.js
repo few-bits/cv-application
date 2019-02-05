@@ -16,12 +16,16 @@ import File from '../../Components/File';
 import Footer from '../../Components/Footer';
 
 import {
-    FIELD_COMMENTS, FIELD_CV_FILE,
+    FIELD_COMMENTS,
+    FIELD_CV_FILE,
     FIELD_LAST_NAME,
-    FIELD_LINK, FIELD_MOBILE,
-    FIELD_NAME, FIELD_POSITION_ID
+    FIELD_LINK,
+    FIELD_MOBILE,
+    FIELD_NAME,
+    FIELD_POSITION_ID,
 } from '../../constants/formData';
 import {
+    INPUT_TYPE_MOBILE,
     INPUT_TYPE_TEXTAREA,
 } from '../../constants/formView';
 
@@ -64,6 +68,7 @@ const CvForm = ({
                     error={formView.formErrors[FIELD_LAST_NAME]}
                 />
                 <Input
+                    type={INPUT_TYPE_MOBILE}
                     value={formData[FIELD_MOBILE]}
                     onChange={(value) => actions.changeField(FIELD_MOBILE, value)}
                     placeHolder={lang.PLACEHOLDER_MOBILE}

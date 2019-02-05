@@ -1,3 +1,5 @@
+import { isValidPhoneNumber } from 'react-phone-number-input'
+
 import lang from '../lang';
 import {
     FIELD_LAST_NAME,
@@ -31,7 +33,7 @@ export const getFormErrors = (data) => {
     validateError[FIELD_POSITION_ID] = data[FIELD_POSITION_ID] === null;
     validateError[FIELD_NAME] = data[FIELD_NAME] === '';
     validateError[FIELD_LAST_NAME] = data[FIELD_LAST_NAME] === '';
-    validateError[FIELD_MOBILE] = data[FIELD_MOBILE] === '';
+    validateError[FIELD_MOBILE] = !isValidPhoneNumber(data[FIELD_MOBILE]);
 
     return validateError;
 };
