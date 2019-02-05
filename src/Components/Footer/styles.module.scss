@@ -1,0 +1,25 @@
+@import "../../assets/styles/variables";
+
+.footer {
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 1.69;
+  letter-spacing: 0.2px;
+  text-align: center;
+
+  .copyright {
+    opacity: 0.8;
+    margin-bottom: 15px;
+  }
+
+  .links a {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 2;
+    color: $lightColor;
+
+    &:first-child {
+      margin-right: 5px;
+    }
+  }
+}

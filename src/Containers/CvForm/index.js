@@ -12,6 +12,7 @@ import Input from '../../Components/Input';
 import Select from '../../Components/Select';
 import Button from '../../Components/Button';
 import File from '../../Components/File';
+import Footer from '../../Components/Footer';
 
 import {
     FIELD_COMMENTS, FIELD_CV_FILE,
@@ -89,10 +90,11 @@ const CvForm = ({
                 <Button
                     onClick={actions.sendForm}
                     text={lang.SEND}
-                    customStyles={null}
+                    customStyles={styles.submit}
                     disabled={formView.submitInProgress}
                 />
             </div>
+            <Footer customStyles={null} />
         </div>
     );
 };
