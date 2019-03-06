@@ -17,7 +17,7 @@ export default {
     PLACEHOLDER_LINK: 'Link to your CV, ex. http://',
     UPLOAD_CV: 'Upload CV file',
     SEND: 'Send',
-    COPYRIGHT: 'Copyright © 2018, Tra Robotics ltd. All rights reserved.',
+    COPYRIGHT: 'Copyright © 2019, Andrey Vladikin. All rights reserved.',
     PRIVACY: 'Privacy',
     POLICY: 'Policy',
 };
